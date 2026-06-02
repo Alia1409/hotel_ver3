@@ -56,7 +56,6 @@ public class AIChatController {
             
             // Check if it is available for today
             LocalDate today = LocalDate.now();
-            // FIXED: Removed trailing ', null' parameter to match the 3-parameter signature
             boolean isAvailable = reservationService.isRoomAvailable(roomNumber, today, today.plusDays(1));
             
             if ("maintenance".equalsIgnoreCase(room.getStatus())) {
@@ -75,7 +74,6 @@ public class AIChatController {
             LocalDate today = LocalDate.now();
 
             for (Room r : roomService.getAllRooms()) {
-                // FIXED: Removed trailing ', null' parameter here as well
                 boolean available = reservationService.isRoomAvailable(r.getRoomNumber(), today, today.plusDays(1));
                 if (available && !"maintenance".equalsIgnoreCase(r.getStatus())) {
                     availableRoomsList.append("- Room ").append(r.getRoomNumber())
