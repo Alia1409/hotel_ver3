@@ -106,7 +106,7 @@ public class StorageManager {
         return list;
     }
 
- // --- SAVE ROOMS AS JSON ---
+ // SAVE ROOMS AS JSON 
     public void saveRooms(List<Room> rooms) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(ROOMS_FILE))) {
             pw.println("[");
@@ -128,9 +128,8 @@ public class StorageManager {
         }
     }
 
- // --- SAVE RESERVATIONS AS JSON ---
+ // SAVE RESERVATIONS AS JSON
     public void saveReservations(List<Reservation> reservations) {
-        // FIXED: Changed RERESERVATIONS_FILE to RESERVATIONS_FILE
         try (PrintWriter pw = new PrintWriter(new FileWriter(RESERVATIONS_FILE))) {
             pw.println("[");
             for (int i = 0; i < reservations.size(); i++) {
