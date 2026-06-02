@@ -13,7 +13,7 @@ public class HotelController {
     private final List<Reservation> reservations;
 
     public HotelController() {
-        // Automatically loads rooms from rooms.txt on startup
+        // Automatically loads rooms
         this.rooms = DataStore.loadRooms();
         
         // Pass a temporary/null RoomService if your DataStore loadReservations requires it, 
@@ -37,7 +37,7 @@ public class HotelController {
 
     public void addRoom(Room r) {
         rooms.add(r);
-        DataStore.saveRooms(rooms); // Saves to text file automatically
+        DataStore.saveRooms(rooms); // Saves to file automatically
     }
 
     public void updateRoom(String oldNum, Room updated) {
@@ -47,12 +47,12 @@ public class HotelController {
                 break;
             }
         }
-        DataStore.saveRooms(rooms); // Saves to text file automatically
+        DataStore.saveRooms(rooms); // Saves to file automatically
     }
 
     public void deleteRoom(String roomNumber) {
         rooms.removeIf(r -> r.getRoomNumber().equals(roomNumber));
-        DataStore.saveRooms(rooms); // Saves to text file automatically
+        DataStore.saveRooms(rooms); // Saves to file automatically
     }
 
     public boolean createReservation(Reservation res) {
@@ -60,7 +60,7 @@ public class HotelController {
             return false;
         }
         reservations.add(res);
-        DataStore.saveReservations(reservations); // Saves to text file automatically
+        DataStore.saveReservations(reservations); // Saves to file automatically
         return true;
     }
 
@@ -74,13 +74,13 @@ public class HotelController {
                 break;
             }
         }
-        DataStore.saveReservations(reservations); // Saves to text file automatically
+        DataStore.saveReservations(reservations); // Saves to file automatically
         return true;
     }
 
     public void deleteReservation(String id) {
         reservations.removeIf(r -> r.getId().equals(id));
-        DataStore.saveReservations(reservations); // Saves to text file automatically
+        DataStore.saveReservations(reservations); // Saves to file automatically
     }
 
     public void exportToCSV() {
