@@ -46,7 +46,7 @@ public class MainApp extends JFrame {
         add(tabPane);
     }
 
-    // --- VIEW 1: DAILY OCCUPANCY PANEL ---
+    // VIEW 1: DAILY OCCUPANCY PANEL 
     private JPanel buildOccupancyView() {
         JPanel panel = new JPanel(new BorderLayout(15, 15));
         panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -84,7 +84,7 @@ public class MainApp extends JFrame {
         return panel;
     }
 
-    // --- VIEW 2: RESERVATION MANAGER TAB (CRUD WITH FILTERS) ---
+    //VIEW 2: RESERVATION MANAGER TAB (CRUD WITH FILTERS)
     private JPanel buildReservationView() {
         JPanel mainBox = new JPanel(new BorderLayout(15, 15));
         mainBox.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -307,7 +307,7 @@ public class MainApp extends JFrame {
         return mainBox;
     }
 
-    // --- VIEW 3: ROOM MANAGEMENT TAB (CRUD WITH DYNAMIC SORTING) ---
+    //VIEW 3: ROOM MANAGEMENT TAB (CRUD WITH DYNAMIC SORTING) 
     private JPanel buildRoomView() {
         JPanel mainBox = new JPanel(new BorderLayout(15, 15));
         mainBox.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -446,7 +446,7 @@ public class MainApp extends JFrame {
         return mainBox;
     }
 
-    // --- STANDARD COMPILATION RUN ENTRY POINT ---
+    //STANDARD COMPILATION RUN ENTRY POINT
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new MainApp().setVisible(true));
     }
