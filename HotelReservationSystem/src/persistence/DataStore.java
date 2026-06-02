@@ -12,7 +12,7 @@ public class DataStore {
     private static final String ROOMS_FILE = "rooms.txt";
     private static final String RESERVATIONS_FILE = "reservations.txt";
 
-    // --- ROOM FILE HANDLING ---
+    // room file handling
     public static void saveRooms(List<Room> rooms) {
         try (PrintWriter out = new PrintWriter(new FileWriter(ROOMS_FILE))) {
             for (Room r : rooms) {
@@ -44,7 +44,7 @@ public class DataStore {
         return loadedRooms;
     }
 
-    // --- RESERVATION FILE HANDLING ---
+    // reservation file handeling
     public static void saveReservations(List<Reservation> reservations) {
         try (PrintWriter out = new PrintWriter(new FileWriter(RESERVATIONS_FILE))) {
             for (Reservation res : reservations) {
