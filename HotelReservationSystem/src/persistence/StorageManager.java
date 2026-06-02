@@ -11,7 +11,7 @@ public class StorageManager {
 	private static final String RESERVATIONS_FILE = "reservations.json";
 	private static final java.time.format.DateTimeFormatter dateForm = java.time.format.DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    // --- ROOM INVENTORY I/O PROCESSING ---
+    // ROOM INVENTORY I/O PROCESSING 
 	public List<Room> loadRooms() {
         List<Room> list = new java.util.ArrayList<>();
         File file = new File(ROOMS_FILE);
